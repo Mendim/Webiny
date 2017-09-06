@@ -126,7 +126,7 @@ class Setup extends Plugin {
             // Create admin user
             const params = [answers.domain, answers.user, answers.password].join(' ');
             try {
-                let output = Webiny.shellExecute('docker-compose run php /app/Apps/Webiny/Php/Cli/admin.php ' + params, {stdio: 'pipe'});
+                let output = Webiny.shellExecute('docker-compose run php php /app/Apps/Webiny/Php/Cli/admin.php ' + params, {stdio: 'pipe'});
                 output = JSON.parse(output);
                 if (output.status === 'created') {
                     Webiny.success('Admin user created successfully!');
