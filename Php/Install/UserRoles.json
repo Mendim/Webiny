@@ -42,5 +42,12 @@
         "slug": "webiny-api-discoverer",
         "description": "This role allows user to discover API using Postman",
         "permissions": []
+    },
+    {
+        "name": "Webiny New Module",
+        "slug": "webiny-new-module",
+        "isAdminRole": true,
+        "description": "This role allows user to see the New Module",
+        "permissions": []
     }
 ]

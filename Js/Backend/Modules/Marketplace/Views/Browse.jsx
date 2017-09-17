@@ -60,12 +60,12 @@ class Browse extends Webiny.Ui.View {
             );
         }
 
-        const {styles, Link, View, Icon, Grid} = this.props;
+        const {styles, Link, View, Icon, Grid, Alert} = this.props;
 
         return (
             <div className={styles.browse}>
                 <View.Dashboard>
-                    <View.Header title="Marketplace">
+                    <View.Header title="Improved Marketplace">
                         <View.Header.Center>
                             <User user={this.state.user}/>
                         </View.Header.Center>
@@ -80,6 +80,7 @@ class Browse extends Webiny.Ui.View {
                         }
                     </View.Header>
                     <View.Body>
+                        <Alert type="success">This is the new version of marketplace!</Alert>
                         <Webiny.Ui.Placeholder name="Apps">
                             <Grid.Row className={styles.appList}>
                                 {this.state.apps && this.state.apps.map(app => (
@@ -105,4 +106,4 @@ Browse.defaultProps = {
     }
 };
 
-export default Webiny.createComponent(Browse, {styles, modules: ['View', 'Link', 'Icon', 'Grid', 'Loader']});
+export default Webiny.createComponent(Browse, {styles, modules: ['View', 'Link', 'Icon', 'Grid', 'Loader', 'Alert']});
