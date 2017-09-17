@@ -12,6 +12,8 @@ class InstallModal extends Webiny.Ui.ModalComponent {
     }
 
     startInstallation() {
+        const rhl = __REACT_HOT_LOADER__;
+        __REACT_HOT_LOADER__ = null;
         const {Progress} = this.props;
         this.setState({started: true});
         const api = new Webiny.Api.Endpoint('/services/webiny/marketplace');
@@ -61,6 +63,7 @@ class InstallModal extends Webiny.Ui.ModalComponent {
         });
 
         return api.get(`apps/${this.props.app.id}/install`).then(() => {
+            __REACT_HOT_LOADER__ = rhl;
             if (this.state.finished) {
                 const appName = this.props.app.localName + '.Backend';
                 Webiny.includeApp(appName).then(app => app.run()).then(() => {
