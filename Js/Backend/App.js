@@ -7,6 +7,7 @@ import Layout from './Modules/Layout';
 import Logger from './Modules/Logger';
 import Dashboard from './Modules/Dashboard';
 import Marketplace from './Modules/Marketplace';
+import NewModule from './Modules/NewModule';
 import './Components';
 
 class Backend extends Webiny.App {
@@ -17,6 +18,7 @@ class Backend extends Webiny.App {
             new Layout(this),
             new Logger(this),
             new Dashboard(this),
+            new NewModule(this)
         ];
 
         if (DEVELOPMENT) {
